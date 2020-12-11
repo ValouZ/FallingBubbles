@@ -16,7 +16,7 @@ bubbleContainer.addEventListener("click", addBubble);
 
 // On ajoute une nouvelle bulle à la page
 function addBubble(e){
-    var bubble = new Bubble();
+    let bubble = new Bubble();
     let x = e.clientX - (bubble.diameter / 2);
     let y = e.clientY - (bubble.diameter / 2);
     // console.log("X - " + x + " / Y - " + y);
