@@ -1,11 +1,13 @@
 const bubbleContainer = document.getElementById("app-bubble-container");
 
-function Bubble(){
-    this.diameter = getRandomInt(25,150) * 2;
-    this.red = getRandomInt(0, 256);
-    this.green = getRandomInt(0, 256);
-    this.blue = getRandomInt(0, 256);
-    this.color = "rgb(" + this.red + "," + this.green +"," + this.blue + ")";
+class Bubble {
+    constructor() {
+        this.diameter = getRandomInt(25, 150) * 2;
+        this.red = getRandomInt(0, 256);
+        this.green = getRandomInt(0, 256);
+        this.blue = getRandomInt(0, 256);
+        this.color = "rgb(" + this.red + "," + this.green + "," + this.blue + ")";
+    }
 }  
 
 
@@ -17,7 +19,7 @@ function addBubble(e){
     var bubble = new Bubble();
     let x = e.clientX - (bubble.diameter / 2);
     let y = e.clientY - (bubble.diameter / 2);
-    console.log("X - " + x + " / Y - " + y);
+    // console.log("X - " + x + " / Y - " + y);
     let displayedBubble = document.createElement("div");
     displayedBubble.classList.add("bubble");
     displayedBubble.style.backgroundColor = bubble.color;
