@@ -84,7 +84,7 @@ function makeBubblesFall(nB){
         numberOfBubbles = getRandomInt(10, 21);
         // Ajout de la classe fall à chaque bulles
         for(let i = 0; i < bubbles.length; i++){
-            bubbles[i].classList.add("fall")
+            bubbles[i].classList.add("fall");
         }
         // On empêche l'utilisateur de rajouter des bulles en même temps que l'animation se lance
         bubbleContainer.removeEventListener("click", addBubble);    
