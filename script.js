@@ -8,13 +8,12 @@ function Bubble(){
     this.color = "rgb(" + this.red + "," + this.green +"," + this.blue + ")";
 }  
 
-
 // Ajout de l'évènement à la page
 bubbleContainer.addEventListener("click", addBubble);
 
 // On ajoute une nouvelle bulle à la page
 function addBubble(e){
-    var bubble = new Bubble();
+    let bubble = new Bubble();
     let x = e.clientX - (bubble.diameter / 2);
     let y = e.clientY - (bubble.diameter / 2);
     console.log("X - " + x + " / Y - " + y);
@@ -34,7 +33,7 @@ function makeBubblesFall(numberOfBubbles){
     let bubbles = document.getElementsByClassName("bubble");
     if (bubbles.length == numberOfBubbles){
         for(let i = 0; i < bubbles.length; i++){
-            bubbles[i].classList.add("fall")
+            bubbles[i].classList.add("fall");
         }
         bubbleContainer.removeEventListener("click", addBubble);
         setTimeout( () => {
