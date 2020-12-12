@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     outline: none;
 }
 
@@ -11,15 +11,21 @@
     background-color: none;
 }
 
+*:root{
+    --circle-opacity: 0.3;
+}
+
 body{
     background: #222;
     display: flex;
+    align-items: center;
     justify-content: center;
     height: 100vh;
     overflow: hidden;
 }
 
 h1{
+    text-align: center;
     color: #f8dd50;
     font-size: 150px;
 }
@@ -30,6 +36,8 @@ h1{
     top: 0;
     left: 0;
     position: absolute;
+    /* On cache le curseur car la bulle en fait office */
+    cursor: none;
 }
 
 .bubble{
@@ -37,6 +45,7 @@ h1{
     position: absolute;
     border-radius: 100%;
     transition: 0.2s linear;
+    animation: opacityScalling 0.3s forwards linear;
 }
 
 .fall{
@@ -44,12 +53,10 @@ h1{
 }
 
 .circle {
-    opacity: 0.8;
+    z-index: 5;
+    opacity: var(--circle-opacity);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -50px 0 0 -50px;
-    border-radius: 80%;
+    border-radius:100%;
     backface-visibility: hidden;
 }
 
@@ -72,5 +79,25 @@ h1{
 
     100%{
         top: 100%;
+    }
+}
+
+@keyframes opacityScalling{
+    0%{
+        opacity: var(--circle-opacity);
+    }
+
+    50%{
+        transform: scale(1.4);
+        opacity: 1;
+    }
+
+    60%{
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+
+    100%{
+        opacity: 0.5;
     }
 }
