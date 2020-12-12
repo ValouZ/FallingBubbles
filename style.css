@@ -36,10 +36,21 @@ h1{
     opacity: 0.5;
     position: absolute;
     border-radius: 100%;
+    transition: 0.2s linear;
 }
 
 .fall{
     animation: fallAnimation 2s forwards ease-out;
+}
+
+.circle {
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+    border-radius: 80%;
+    backface-visibility: hidden;
 }
 
 @keyframes fallAnimation{
